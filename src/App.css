@@ -1,0 +1,34 @@
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: darkseagreen;
+    color: rgb(232, 188, 43);
+
+    padding-left: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.navBar  a {
+    background-color: rgb(217, 204, 141);
+    color: chocolate;
+    width: 100px;
+    margin: 10px;
+    padding-inline: 5px;
+    font-size: 25px;
+
+    border-radius: 15px;
+    text-decoration: none;
+}
+
+.cartWidget {
+    display: flex;
+    align-items: center;
+    color: blueviolet;
+    padding-right: 10px;
+}
+.cartWidgetIcon {
+    size: "60px"
+}
+

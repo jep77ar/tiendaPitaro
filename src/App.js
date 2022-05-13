@@ -1,10 +1,13 @@
+import ItemListContainer from "./components/ItemListContainer";
+import NavBar from "./components/NavBar";
 
 
 const App = () => {
   return (
-    <div>
-     Hola mundo
-    </div>
+    <>
+     <NavBar />
+     <ItemListContainer greeting="Saludos!"/>
+    </>
   );
 }
 
