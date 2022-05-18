@@ -22,6 +22,20 @@
     text-decoration: none;
 }
 
+.brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: blueviolet;
+    margin: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+}
+.brand img{
+    width: 60px; 
+    transform: rotateY(180deg) rotateZ(10deg);
+}
+
 .cartWidget {
     display: flex;
     align-items: center;
@@ -32,3 +46,45 @@
     size: "60px"
 }
 
+.contadorPadre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: blanchedalmond;
+    width: 200px;
+    height: 80px;
+    border: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(6, 87, 90)
+}
+.contador {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
+
+    width: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
+    font-size: 30px;
+    font-weight: bold;
+}
+.contador div{
+    width: 40px;
+    margin: 5px;
+    text-align: center;
+    line-height: 95%;
+}
+
+.btnAgregarCarro {
+    background-color: aquamarine;
+    width: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.control-contador {
+    font-size: 30;
+    color: blue; 
+    cursor: pointer;          
+}
