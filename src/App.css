@@ -88,3 +88,47 @@
     color: blue; 
     cursor: pointer;          
 }
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: rgb(227, 244, 230);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.item .header {
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+    background-color: rgb(168, 187, 168);
+    width: 98%;
+    font-size: 25px;
+
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.item .footer {
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+
+    background-color: rgb(168, 187, 168);    
+    width: 98%;
+    font-size: 25px;
+
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.itemList {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    flex-wrap: wrap;
+}

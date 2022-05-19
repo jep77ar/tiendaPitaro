@@ -1,9 +1,9 @@
-import logoTienda from "./../assets/moto-01-logo.png"
 
 const Brand = () => {
+    let img ="/assets/moto-01-logo.png";
    return ( 
    <div  className="brand">
-        <img src={logoTienda} alt="Tienda MotoWeb" />
+        <img src={img} alt="Tienda MotoWeb" />
         <div>MotoWeb</div>
     </div>)
 }

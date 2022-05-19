@@ -1,4 +1,7 @@
 import ItemCount from "./ItemCount";
+import ItemList from "./ItemList";
+import getItems from "./../services/apiProducts";
+import { useEffect, useState } from "react";
 
   let agregaAlCarro = (valor) => {
     console.log("Se agregó en el carrito la siguiente cantidad: ", valor )
@@ -6,13 +9,23 @@ import ItemCount from "./ItemCount";
 
 const ItemListContainer = ({greeting}) => {
 
+  const [productos, setProductos] = useState([]);
 
-  return (<>
-  <h3>{greeting}</h3>
-    <div>Item 1</div>
-    <div>Item 2</div>
-    <div>Item 3</div>
-    <ItemCount stock = "10" initial = "1" onAdd={agregaAlCarro}/>
+  useEffect(() => {
+    getProductos()
+  },[]);
+
+  async function getProductos() {
+      let allProducts = await getItems();
+      console.log("el valor de allProducts es: ", allProducts)
+      setProductos( allProducts );
+  }
+
+  return (
+    <>
+      <h3>{greeting}</h3>
+      <ItemList items={productos} />
+      <ItemCount stock = "10" initial = "1" onAdd={agregaAlCarro}/>
     </>
   );
 
