@@ -9,7 +9,7 @@ const Item = ({item}) =>  {
                 <div>
                     <img alt="algo" src={image} />
                 </div>
-                <div className="footer">Stock: {item.stock}</div>
+                <div className="footer">Stock: <b>{item.stock}</b></div>
         </div>
     );
 }
