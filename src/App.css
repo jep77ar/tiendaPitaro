@@ -125,6 +125,19 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+
+.itemDetail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: rgb(171, 248, 185);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 .itemList {
     display: flex;
     align-items: center;

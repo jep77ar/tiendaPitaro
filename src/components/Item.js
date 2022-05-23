@@ -7,7 +7,7 @@ const Item = ({item}) =>  {
                 <div>{item.description}</div>
                 <div>Precio: ${item.price}</div>
                 <div>
-                    <img alt="algo" src={image} />
+                   <img alt="algo" src={image} />
                 </div>
                 <div className="footer">Stock: <b>{item.stock}</b></div>
         </div>
