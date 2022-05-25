@@ -46,9 +46,11 @@ const productos = [
   }
 ];
 
-const getItems = async  () => {
+const getItems = async  (id) => {
     let promise = new Promise((resolve, reject) => {
-        console.log("Cargando productos ...")
+
+      let msg = id ? "Cargando productos de la categoria " + id + " ..." : "Cargando todos los productos ...";
+        console.log(msg)
         setTimeout(() => {
             resolve(productos);
         }, 2000);
@@ -58,6 +60,11 @@ const getItems = async  () => {
 
     try {
         result = await promise;
+        if (id) {
+          let filtrado = result.filter(cat => cat.category === id);
+          result = filtrado;
+        } 
+        
     } catch (error) {
         console.log("Ocurrio un error al buscar los productos")
     }

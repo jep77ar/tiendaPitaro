@@ -1,24 +1,24 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import getItem from "./../services/apiItem";
+import { useParams } from "react-router-dom";
 
-const ItemDetailContainer = ({identificador}) => {
-
+const ItemDetailContainer = () => {
+    const { itemId } = useParams();
     const [item, setItem] = useState({});
 
     useEffect(() => {
-        findItem(identificador);
+        findItem(itemId); 
     }, []);
 
     const findItem = async (idItem) => {
         let unItem = await getItem(idItem);
-        console.log("el valor del id>item es: ", idItem, unItem)
         setItem(unItem);
     }
 
     return (
         <>
-            <div>
+            <div className="itemDetailContainer">
                 { 
                     <ItemDetail item={item}/> 
                 }

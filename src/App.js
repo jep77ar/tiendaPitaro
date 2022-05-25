@@ -1,14 +1,5 @@
-import ItemListContainer from "./components/ItemListContainer";
-import NavBar from "./components/NavBar";
+import RoutesConfig from "./app/RoutesConfig";
 
-
-const App = () => {
-  return (
-    <>
-     <NavBar />
-     <ItemListContainer greeting="Saludos!"/>
-    </>
-  );
-}
+const App = () => <RoutesConfig/>
 
 export default App;
