@@ -7,7 +7,7 @@
 
     padding-left: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-
+    user-select: none;
 }
 
 .navBar .categoria {
@@ -20,6 +20,10 @@
 
     border-radius: 15px;
     text-decoration: none;
+}
+
+a {
+    text-decoration:none;
 }
 
 .brand {
@@ -56,7 +60,7 @@
     height: 80px;
     border: 10px;
     border-radius: 10px;
-    border: 1px solid rgb(6, 87, 90)
+
 }
 .contador {
     display: flex;
@@ -81,6 +85,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
     border-radius: 10px;
     cursor: pointer;
+    user-select: none;
 }
 
 .control-contador {
@@ -90,6 +95,7 @@
 }
 
 .item {
+    color: darkgreen;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -99,6 +105,7 @@
     border-radius: 5px;
     background-color: rgb(227, 244, 230);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    user-select: none;
 }
 
 .item .header {
@@ -136,6 +143,7 @@
     border-radius: 5px;
     background-color: rgb(171, 248, 185);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    user-select: none;
 }
 
 .itemList {

@@ -18,6 +18,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
     let agregaAlCarro = () => {
         if ((0 < stock) && (0 < count)) {
+            console.log(`Se agregan al carro ${count} items.`)
             onAdd(count);
         }
     }
