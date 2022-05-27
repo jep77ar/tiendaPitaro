@@ -160,3 +160,38 @@ a {
     align-items: center;
     justify-content: center;
 }
+
+.tablaCarrito table {
+    width: 100%;
+    border: 1px solid #000;
+}
+
+.tablaCarrito th,
+td {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 25%;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: 0.3em;
+    caption-side: bottom;
+}
+
+.tablaCarrito caption {
+    padding: 0.3em;
+    color: #fff;
+    background: #000;
+}
+
+.tablaCarrito th {
+    background: #eee;
+}
+
+.precioTotal {
+    display: flex;
+    justify-content: end;
+    margin-right: 170px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 22px;
+}
