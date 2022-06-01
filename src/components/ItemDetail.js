@@ -4,7 +4,6 @@ import { CartContext } from "../app/CartContext";
 import ItemCount from "./ItemCount";
 
 const ItemDetail = ({ item }) => {
-  let image = "/assets/" + item.pictureUrl;
   const [quantityToAdd, setQuantityToAdd] = useState(0);
   const { carrito, addItem } = useContext(CartContext);
 
@@ -29,7 +28,7 @@ const ItemDetail = ({ item }) => {
       </div>
       <p>{item.description}</p>
       <div>
-        <img alt="algo" src={image} />
+        <img alt="algo" src={item.pictureUrl} />
       </div>
       <div>
         Precio: ${item.price} - Stock: <b>{item.stock}</b>

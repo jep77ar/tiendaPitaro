@@ -101,21 +101,30 @@ a {
     align-items: center;
     justify-content: center;
     width: 300px;
-    margin: 5px;
     border-radius: 5px;
+    margin: 10px;
     background-color: rgb(227, 244, 230);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     user-select: none;
 }
 
+.item img {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.item:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .item .header {
     display: flex;
     justify-content: center;
-    padding: 2px;
     background-color: rgb(168, 187, 168);
-    width: 98%;
+    width: 100%;
     font-size: 25px;
-
+    margin-top: -10px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -123,14 +132,15 @@ a {
 .item .footer {
     display: flex;
     justify-content: center;
-    padding: 2px;
 
     background-color: rgb(168, 187, 168);    
-    width: 98%;
+    width: 100%;
     font-size: 20px;
 
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+
+    margin-bottom: -10px;
 }
 
 .itemDetail {
@@ -144,6 +154,12 @@ a {
     background-color: rgb(171, 248, 185);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     user-select: none;
+}
+
+.itemDetail img {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
 }
 
 .itemList {
@@ -190,8 +206,17 @@ td {
 
 .precioTotal {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     margin-right: 170px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 22px;
 }
+
+.abmCategorias {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 500px;
+    font-size: 20px;
+}
+

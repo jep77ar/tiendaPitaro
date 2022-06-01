@@ -1,10 +1,9 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { CartContext } from "../app/CartContext";
 
 const CartContainer = () => {
   const { carrito, removeItem, clear } = useContext(CartContext);
-  /*   const [acumulaPrecio, setAcumulaPrecio] = useState(0);
-   */
+
   useEffect(() => {
     console.log("contexto: ", carrito);
     mostrarCarritoEnTabla();

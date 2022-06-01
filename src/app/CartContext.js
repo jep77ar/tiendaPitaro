@@ -7,7 +7,7 @@ const TiendaProvider = ({ children }) => {
     console.log("en addItem: ", newItem, quantity);
     if (isInCart(newItem.id)) {
       console.log("en addItem: ya esta en el carrito");
-      alert(`El item ${newItem.title} ya está en el carrito`);
+      alert(`El item ${newItem.title} ya está en el carrito (${newItem.id})`);
       return;
     }
 

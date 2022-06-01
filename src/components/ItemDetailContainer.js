@@ -1,30 +1,26 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
-import getItem from "./../services/apiItem";
 import { useParams } from "react-router-dom";
+import { getProductById } from "../app/services/productosApi";
 
 const ItemDetailContainer = () => {
-    const { itemId } = useParams();
-    const [item, setItem] = useState({});
+  const { itemId } = useParams();
+  const [item, setItem] = useState({});
 
-    useEffect(() => {
-        findItem(itemId); 
-    }, []);
+  useEffect(() => {
+    findItem(itemId);
+  }, []);
 
-    const findItem = async (idItem) => {
-        let unItem = await getItem(idItem);
-        setItem(unItem);
-    }
+  const findItem = async (idItem) => {
+    let unItem = await getProductById(idItem);
+    setItem(unItem);
+  };
 
-    return (
-        <>
-            <div className="itemDetailContainer">
-                { 
-                    <ItemDetail item={item}/> 
-                }
-            </div>
-        </>
-    );
-}
+  return (
+    <>
+      <div className="itemDetailContainer">{<ItemDetail item={item} />}</div>
+    </>
+  );
+};
 
 export default ItemDetailContainer;
