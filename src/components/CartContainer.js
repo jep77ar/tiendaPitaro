@@ -1,8 +1,14 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { CartContext } from "../app/CartContext";
+import { createCompra } from "../app/services/comprasApi";
 
 const CartContainer = () => {
   const { carrito, removeItem, clear } = useContext(CartContext);
+  const [nombre, setNombre] = useState("");
+  const [telefono, setTelefono] = useState("");
+  const [email, setEmail] = useState("");
+  let navigate = useNavigate();
 
   useEffect(() => {
     console.log("contexto: ", carrito);
@@ -13,8 +19,6 @@ const CartContainer = () => {
     let acumulaPrecio = +0;
     return (
       <div>
-        <h1>Contenido del carrito</h1>
-        <br />
         <table className="tablaCarrito">
           <thead>
             <tr>
@@ -55,11 +59,90 @@ const CartContainer = () => {
     );
   };
 
+  const mostrarFormularioCompra = () => {
+    return (
+      <form onSubmit={handleSubmit}>
+        <input type="text" placeholder="Nombre" onChange={updateNombre} />
+        <input type="text" placeholder="Telefono" onChange={updateTelefono} />
+        <input type="text" placeholder="email" onChange={updateEmail} />
+        <button type="submit">Comprar</button>
+      </form>
+    );
+  };
+
   const eliminaItem = (id) => {
     removeItem(id);
   };
 
-  return <div>{mostrarCarritoEnTabla()}</div>;
+  const updateNombre = (e) => {
+    setNombre(e.target.value);
+  };
+
+  const updateTelefono = (e) => {
+    setTelefono(e.target.value);
+  };
+
+  const updateEmail = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (nombre === "" || telefono === "" || email === "") {
+      alert("Todos los datos del comprador son obligatorios");
+      return;
+    }
+
+    armarCompra();
+  };
+
+  const armarCompra = async () => {
+    let buyer = {
+      name: nombre,
+      phone: telefono,
+      email: email,
+    };
+
+    let montoTotal = +0;
+    let compra = carrito.map((item) => {
+      //TODO debe verificar si hay stock de este item y actualizarlo descontando lo q se esta comprando
+
+      montoTotal = montoTotal + item.price * item.quantity;
+      return {
+        id: item.id,
+        title: item.title,
+        price: item.price,
+        quantity: item.quantity,
+      };
+    });
+
+    let fecha = new Date().toLocaleDateString();
+    console.log("compra", { items: compra, buyer, fecha, total: montoTotal });
+
+    let orderId = await createCompra({
+      items: compra,
+      buyer,
+      fecha,
+      total: montoTotal,
+    });
+    alert(`Compra realizada con exito, numero de orden: ${orderId}`);
+
+    clear();
+    navigate("/");
+  };
+
+  return (
+    <>
+      <div>
+        <h4>Contenido del carrito</h4>
+        <div>{mostrarCarritoEnTabla()}</div>
+      </div>
+      <div className="formCompra">
+        <h4>Datos del comprador</h4>
+        <div>{mostrarFormularioCompra()}</div>
+      </div>
+    </>
+  );
 };
 
 export default CartContainer;

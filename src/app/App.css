@@ -11,7 +11,6 @@
 }
 
 .navBar .categoria {
-    background-color: rgb(217, 204, 141);
     color: chocolate;
     width: 100px;
     margin: 10px;
@@ -220,3 +219,29 @@ td {
     font-size: 20px;
 }
 
+.formCompra {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    padding: 10px;
+    height: 100%;
+    align-items: normal;
+}
+
+.formCompra form{
+    display: flex;
+    flex-direction: column;
+}
+
+.formCompra input {
+    padding: 5px;
+    margin: 5px;
+}
+
+.formCompra button {
+    border-radius: 10px;
+    height: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    background-color: aquamarine
+}
