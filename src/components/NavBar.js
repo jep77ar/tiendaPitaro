@@ -2,10 +2,12 @@ import { NavLink } from "react-router-dom";
 import Brand from "./Brand";
 import CartWidget from "./CartWidget";
 import "./../app/App.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getCategorias } from "../app/services/categoriasApi";
+import { CartContext } from "../app/CartContext";
 
 const NavBar = () => {
+  const { carrito } = useContext(CartContext);
   const [categorias, setCategorias] = useState([]);
 
   useEffect(() => {
@@ -28,8 +30,7 @@ const NavBar = () => {
           </NavLink>
         ))}
       </div>
-
-      <CartWidget />
+      {carrito && carrito.length > 0 && <CartWidget />}
     </div>
   );
 };

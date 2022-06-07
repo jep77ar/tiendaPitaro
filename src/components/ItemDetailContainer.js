@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import { getProductById } from "../app/services/productosApi";
+import ItemEmpty from "./ItemEmpty";
 
 const ItemDetailContainer = () => {
   const { itemId } = useParams();
@@ -18,7 +19,13 @@ const ItemDetailContainer = () => {
 
   return (
     <>
-      <div className="itemDetailContainer">{<ItemDetail item={item} />}</div>
+      <div className="itemDetailContainer">
+        {item.stock > 0 ? (
+          <ItemDetail item={item} />
+        ) : (
+          <ItemEmpty item={item} />
+        )}
+      </div>
     </>
   );
 };

@@ -22,12 +22,7 @@ const AbmItems = () => {
               item.thumbnail_id +
               "-F.webp",
             ////  id: item.id,
-            description:
-              item.title +
-              " - $ " +
-              item.price +
-              " - disponibles:  " +
-              item.available_quantity,
+            description: item.title + " - $ " + item.price,
             stock: item.available_quantity,
           };
 

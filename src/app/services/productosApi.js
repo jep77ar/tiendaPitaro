@@ -10,6 +10,7 @@ import {
   updateDoc,
   setDoc,
   where,
+  writeBatch,
 } from "firebase/firestore";
 
 const collectionName = "productos";
@@ -23,6 +24,20 @@ export const createProduct = (obj) => {
 // UPDATE
 export const updateProduct = async (id, obj) => {
   await updateDoc(doc(db, collectionName, id), obj);
+};
+
+// UPDATE BATCH
+export const updateCompraBatch = async (carrito) => {
+  console.log("actualizando stock", carrito);
+  const batch = writeBatch(db);
+  carrito.forEach((itemCompra) => {
+    let newStock = itemCompra.stock - itemCompra.quantity;
+
+    let itemRef = doc(db, collectionName, itemCompra.id);
+    batch.update(itemRef, { stock: newStock });
+  });
+
+  batch.commit();
 };
 
 // READ

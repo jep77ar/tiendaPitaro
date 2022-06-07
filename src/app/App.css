@@ -160,6 +160,20 @@ a {
     height: 200px;
     border-radius: 5px;
 }
+.itemDetail h3 {
+    font-size: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: orangered;
+}
+
+.itemDetail button {
+    margin: 5px;
+    border-radius: 10px;
+    height: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    background-color: aquamarine
+}
 
 .itemList {
     display: flex;

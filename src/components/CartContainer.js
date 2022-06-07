@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../app/CartContext";
 import { createCompra } from "../app/services/comprasApi";
+import { updateCompraBatch } from "../app/services/productosApi";
 
 const CartContainer = () => {
   const { carrito, removeItem, clear } = useContext(CartContext);
@@ -118,6 +119,8 @@ const CartContainer = () => {
 
     let fecha = new Date().toLocaleDateString();
     console.log("compra", { items: compra, buyer, fecha, total: montoTotal });
+
+    await updateCompraBatch(carrito);
 
     let orderId = await createCompra({
       items: compra,
